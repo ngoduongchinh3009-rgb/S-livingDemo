@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+        background-color: #f6f7fb;
+        width: 1520px;
+        height: 725px;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        position: sticky;
+        top: 0;
+        margin: 0 140px;
+        height: 50px;
+        justify-content: space-between; /*ở giữa cách đều*/
+        background-color: #f6f7fb;
+      }
+      main{
+        margin: 0 140px;
+        width: 100%;
+      }
+      footer{
+        height: 80px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        font-size: 20px;
+        gap: 50px;
+      }
+      
+      
+      h1 {
+        font-size: 20px;
+        margin: 0;
+      }
+      h2 {
+        font-size: 18px;
+        margin: 20px 0 0 20px;
+      }
+      h3 {
+        font-size: 20px;
+        margin: 10px 0;
+      }
+      .icons {
+        display: flex;
+        gap: 10px;
+        font-size: 20px;
+        text-align: right;
+      }
+      .banner {
+        display: flex;
+        }
+      .item {
+        flex: 0 0 auto; /* không co giãn*/
+        margin-right: 20px;
+        width: 620px;
+        height: 150px;
+        background-color: #fff;
+        border-radius: 30px;
+        text-align: left;
+      }
+      .item .content {
+        display: flex; /* thẻ p và img đều nằm ngang nhau*/
+        margin: 0;
+      }
+      .item .content p {
+        flex: 8;
+        font-size: 13px;
+        margin: 5px 20px;
+        width: 80%;
+        height: 100%;
+        color: #555555;
+      }
+      .item .content img {
+        flex: 2;
+        margin: -30px 10px;
+        width: 20%;
+        height: 100%;
+      }
+      .best-sellers {
+        display: flex;
+        width: 100%;
+      }
+      .best-sellers img {
+        background-color: #fff;
+        margin: 10px 20px 0 0;
+        width: 160px;
+        height: 165px;
+        border-radius: 30px;
+      }
+      .best-sellers-names {
+        font-size: 16px;
+        margin: 0 0 0 10px;
+      }
+      .best-sellers-names-e {
+        font-size: 13px;
+        margin: 0 0 25px 10px;
+      }
+      .products-list-header {
+        display: flex;
+        margin: 10px;
+        gap: 30px; /* khoảng cách giữa các div*/
+        border-radius: 50px;
+
+      }
+      button{
+        display: flex;
+        background-color: #f6f7fb;
+        border: none;
+        font-size: 15px;
+        color: #83a1a7;
+      }
+      .products {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .products-list img {
+        width: 410px;
+        height: 420px;
+        background-color: #fff;
+        border-radius: 20px;
+        margin: 20px 20px 0 0;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Mall</h1>
+      <div class="icons">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-solid fa-cart-shopping"></i>
+      </div>
+    </header>
+<main>
+    <div class="banner">
+      <div class="item">
+        <h2>Rèm Thông Minh</h2>
+        <div class="content">
+          <p>
+            Thiết kế chắc chắn & bền bỉ: Toàn bộ sản phẩm bên ngoài được làm
+            bằng nhôm cao cấp, khả năng chịu lực va chạm mạnh, chịu nhiệt và
+            chống ăn mòn cùng với kích thước nhỏ gọn nên phù hợp với nhiều loại
+            hình không gian khác nhau.
+          </p>
+          <img src="./img/remthongminh.avif" alt="Hình ảnh Rèm thông minh" />
+        </div>
+      </div>
+      <div class="item">
+        <h2>Đèn Thông Minh</h2>
+        <div class="content">
+          <p>
+            Hệ thống chiếu sáng thông minh với khả năng điều chỉnh màu sắc, độ
+            sáng và lập lịch tự động. Tiết kiệm năng lượng và tạo không gian
+            sống hiện đại.
+          </p>
+          <img src="./img/denthongminh.avif" alt="Hình ảnh Đèn thông minh" />
+        </div>
+      </div>
+      <div class="item">
+        <h2>Công Tắc Thông Minh</h2>
+        <div class="content">
+          <p>
+            Công tắc cảm ứng cao cấp với thiết kế hiện đại, dễ dàng điều khiển
+            thiết bị từ xa qua smartphone. Tích hợp công nghệ tiết kiệm điện
+            năng.
+          </p>
+          <img
+            src="./img/congtacthongminh.avif"
+            alt="Hình ảnh Công tắc thông minh"
+          />
+        </div>
+      </div>
+      <div class="item">
+        <h2>Cảm Biến Thông Minh</h2>
+        <div class="content">
+          <p>
+            Hệ thống cảm biến chuyển động và nhiệt độ thông minh giúp tự động
+            hóa ngôi nhà của bạn. Nhận biết chính xác và phản ứng nhanh chóng.
+          </p>
+          <img
+            src="./img/cambienthongminh.avif"
+            alt="Hình ảnh Cảm biến thông minh"
+          />
+        </div>
+      </div>
+    </div>
+    <h3>Sản phẩm nổi bật</h3>
+    <div class="best-sellers">
+      <div class="best-sellers-list">
+        <img src="./img/denthongminh.avif" alt="" />
+        <p class="best-sellers-names"><b>Đèn Spotlight</b></p>
+        <p class="best-sellers-names-e">Led Spotlight</p>
+      </div>
+      <div class="best-sellers-list">
+        <img src="./img/leddriver8kenh.avif" alt="" />
+        <p class="best-sellers-names"><b>LED Driver 8 Kênh</b></p>
+        <p class="best-sellers-names-e">LED Driver 8 Channels</p>
+      </div>
+      <div class="best-sellers-list">
+        <img src="./img/quanlydonghonuoc.avif" alt="" />
+        <p class="best-sellers-names"><b>Quản Lý Đồng Hồ Nước</b></p>
+        <p class="best-sellers-names-e">IoT Water Meter</p>
+      </div>
+    </div>
+    
+      <h3>Sản Phẩm Sliving</h3>
+      <div class="products-list-header">
+        <button>Công tắc</button>
+        <button>Bộ điều khiển LED</button>
+        <button>Ổ cắm</button>
+        <button>Cảm biến</button>
+      </div>
+      <div class="products">
+      <div class="products-list">
+        <img src="./img/congtacthongminh.avif" alt="" />
+        <p class="best-sellers-names"><b>Công Tắc Cơ</b></p>
+        <p class="best-sellers-names-e">Smart Mechanical Switch</p>
+      </div>
+      <div class="products-list">
+        <img src="./img/congtacthongminh.avif" alt="" />
+        <p class="best-sellers-names"><b>Công Tắc Cảm Ứng</b></p>
+        <p class="best-sellers-names-e">Touch Switch</p>
+      </div>
+      <div class="products-list">
+        <img src="./img/congtacthongminh.avif" alt="" />
+        <p class="best-sellers-names"><b>Công Tắc Thông Minh Pro</b></p>
+        <p class="best-sellers-names-e">Smart Switch Pro</p>
+      </div>
+      <div class="products-list">
+        <img src="./img/leddriver8kenh.avif" alt="" />
+        <p class="best-sellers-names"><b>Bộ Điều Chỉnh Độ Sáng</b></p>
+        <p class="best-sellers-names-e">Light Dimmer</p>
+      </div>
+      <div class="products-list">
+        <img src="./img/remthongminh.avif" alt="" />
+        <p class="best-sellers-names"><b>Ổ Cắm Thông Minh</b></p>
+        <p class="best-sellers-names-e">Smart Outlet</p>
+      </div>
+      <div class="products-list">
+        <img src="./img/cambiennhietdo.avif" alt="" />
+        <p class="best-sellers-names"><b>Cảm Biến Chuyển Động</b></p>
+        <p class="best-sellers-names-e">Motion Sensor</p>
+      </div>
+      <div class="products-list">
+        <img src="./img/cambiennhietdo.avif" alt="" />
+        <p class="best-sellers-names"><b>Cảm Biến Nhiệt Độ</b></p>
+        <p class="best-sellers-names-e">Temperature Sensor</p>
+      </div>
+      </div>
+      </main>
+      <footer>
+            <i class="fa-regular fa-house"></i>
+            <i class="fa-solid fa-wand-magic-sparkles"></i>   
+            <i class="fa-solid fa-bag-shopping"></i>
+            <i class="fa-solid fa-bell"></i>
+            <i class="fa-solid fa-circle-user"></i>
+      </footer>
+    </div>
+  </body>
+</html>
