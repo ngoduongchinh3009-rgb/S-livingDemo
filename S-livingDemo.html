@@ -11,9 +11,8 @@
     <style>
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        color: #333;
         background-color: #f6f7fb;
-        width: 1520px;
+        width: 100%;
         height: 725px;
       }
       header {
@@ -22,14 +21,14 @@
         padding: 0 10px;
         position: sticky;
         top: 0;
-        margin: 0 140px;
+        padding: 0 140px;
         height: 50px;
         justify-content: space-between; /*ở giữa cách đều*/
         background-color: #f6f7fb;
       }
       main{
+        flex: 1;
         margin: 0 140px;
-        width: 100%;
       }
       footer{
         height: 80px;
@@ -44,10 +43,12 @@
       h1 {
         font-size: 20px;
         margin: 0;
+        color: #212633;
       }
       h2 {
         font-size: 18px;
         margin: 20px 0 0 20px;
+        color: #212633 ;
       }
       h3 {
         font-size: 20px;
@@ -60,12 +61,14 @@
         text-align: right;
       }
       .banner {
+        width: 1200px;
         display: flex;
+        overflow-x: scroll;
         }
       .item {
         flex: 0 0 auto; /* không co giãn*/
         margin-right: 20px;
-        width: 620px;
+        width: 590px;
         height: 150px;
         background-color: #fff;
         border-radius: 30px;
@@ -81,7 +84,7 @@
         margin: 5px 20px;
         width: 80%;
         height: 100%;
-        color: #555555;
+        color: #525b73;
       }
       .item .content img {
         flex: 2;
