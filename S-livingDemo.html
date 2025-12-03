@@ -40,6 +40,7 @@
         font-size: 20px;
         padding: 10px 0;
         justify-content: center;
+        color: #71737e;
       }
       
       h1 {
@@ -107,17 +108,27 @@
         width: 100%;
       }
       .best-sellers-list-add{
+        position: relative;
       }
       .best-sellers img {
         background-color: #fff;
         margin: 10px 20px 0 0;
-        width: 160px;
-        height: 165px;
-        border-radius: 30px;
-
+        width: 170px;
+        height: 170px;
+        border-radius: 20px;
       }
-      .add{
-        position: relative;
+      .add-cart{
+        position: absolute;
+        bottom: 10px;
+        right: 30px;
+        background-color: #1a7dd8;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       .best-sellers-names {
         font-size: 16px;
@@ -236,19 +247,25 @@
     <div class="best-sellers">
       <div class="best-sellers-list">
         <div class="best-sellers-list-add">
-          <i class="fa-solid fa-plus fa-2xs"></i>
           <img src="./img/denthongminh.avif" alt="" />
+          <button class="add-cart"><i class="fa-solid fa-plus fa-2xs"></i></button>
         </div>
         <p class="best-sellers-names"><b>Đèn Spotlight</b></p>
         <p class="best-sellers-names-e">Led Spotlight</p>
       </div>
       <div class="best-sellers-list">
-        <img src="./img/leddriver8kenh.avif" alt="" />
+        <div class="best-sellers-list-add">
+          <img src="./img/leddriver8kenh.avif" alt="" />
+          <button class="add-cart"><i class="fa-solid fa-plus fa-2xs"></i></button>
+        </div>
         <p class="best-sellers-names"><b>LED Driver 8 Kênh</b></p>
         <p class="best-sellers-names-e">LED Driver 8 Channels</p>
       </div>
       <div class="best-sellers-list">
-        <img src="./img/quanlydonghonuoc.avif" alt="" />
+        <div class="best-sellers-list-add">
+          <img src="./img/quanlydonghonuoc.avif" alt="" />
+          <button class="add-cart"><i class="fa-solid fa-plus fa-2xs"></i></button>
+        </div>
         <p class="best-sellers-names"><b>Quản Lý Đồng Hồ Nước</b></p>
         <p class="best-sellers-names-e">IoT Water Meter</p>
       </div>
@@ -263,37 +280,58 @@
       </div>
       <div class="products">
       <div class="products-list">
-        <img src="./img/congtacthongminh.avif" alt="" />
+        <div class="best-sellers-list-add">
+          <img src="./img/congtacthongminh.avif" alt="" />
+          <button class="add-cart"><i class="fa-solid fa-plus fa-2xs"></i></button>
+        </div>
         <p class="best-sellers-names"><b>Công Tắc Cơ</b></p>
         <p class="best-sellers-names-e">Smart Mechanical Switch</p>
       </div>
       <div class="products-list">
-        <img src="./img/congtacthongminh.avif" alt="" />
+       <div class="best-sellers-list-add">
+         <img src="./img/congtacthongminh.avif" alt="" />
+          <button class="add-cart"><i class="fa-solid fa-plus fa-2xs"></i></button>
+        </div>
         <p class="best-sellers-names"><b>Công Tắc Cảm Ứng</b></p>
         <p class="best-sellers-names-e">Touch Switch</p>
       </div>
       <div class="products-list">
-        <img src="./img/congtacthongminh.avif" alt="" />
+        <div class="best-sellers-list-add">
+          <img src="./img/congtacthongminh.avif" alt="" />
+          <button class="add-cart"><i class="fa-solid fa-plus fa-2xs"></i></button>
+        </div>
         <p class="best-sellers-names"><b>Công Tắc Thông Minh Pro</b></p>
         <p class="best-sellers-names-e">Smart Switch Pro</p>
       </div>
       <div class="products-list">
-        <img src="./img/leddriver8kenh.avif" alt="" />
+        <div class="best-sellers-list-add">
+          <img src="./img/leddriver8kenh.avif" alt="" />
+          <button class="add-cart"><i class="fa-solid fa-plus fa-2xs"></i></button>
+        </div>
         <p class="best-sellers-names"><b>Bộ Điều Chỉnh Độ Sáng</b></p>
         <p class="best-sellers-names-e">Light Dimmer</p>
       </div>
       <div class="products-list">
-        <img src="./img/remthongminh.avif" alt="" />
+        <div class="best-sellers-list-add">
+          <img src="./img/remthongminh.avif" alt="" />
+          <button class="add-cart"><i class="fa-solid fa-plus fa-2xs"></i></button>
+        </div>
         <p class="best-sellers-names"><b>Ổ Cắm Thông Minh</b></p>
         <p class="best-sellers-names-e">Smart Outlet</p>
       </div>
       <div class="products-list">
-        <img src="./img/cambiennhietdo.avif" alt="" />
+        <div class="best-sellers-list-add">
+          <img src="./img/cambiennhietdo.avif" alt="" />
+          <button class="add-cart"><i class="fa-solid fa-plus fa-2xs"></i></button>
+        </div>
         <p class="best-sellers-names"><b>Cảm Biến Chuyển Động</b></p>
         <p class="best-sellers-names-e">Motion Sensor</p>
       </div>
       <div class="products-list">
-        <img src="./img/cambiennhietdo.avif" alt="" />
+        <div class="best-sellers-list-add">
+          <img src="./img/cambiennhietdo.avif" alt="" />
+          <button class="add-cart"><i class="fa-solid fa-plus fa-2xs"></i></button>
+        </div>
         <p class="best-sellers-names"><b>Cảm Biến Nhiệt Độ</b></p>
         <p class="best-sellers-names-e">Temperature Sensor</p>
       </div>
