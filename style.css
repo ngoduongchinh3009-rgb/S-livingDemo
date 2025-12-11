@@ -92,6 +92,12 @@ h3 {
   margin-left: 20px;
   font-size: 13px;
 }
+.learn-more button {
+  background-color: #fff;
+  color: #1a7dd8;
+  display: flex;
+  gap: 5px;
+}
 .best-sellers {
   display: flex;
   width: 100%;
@@ -139,6 +145,9 @@ button {
   border: none;
   font-size: 15px;
   color: #83a1a7;
+}
+button:hover {
+  cursor: pointer;
 }
 button.icons-footer {
   display: flex;
@@ -215,17 +224,34 @@ button.icons-footer {
   align-items: center;
   justify-content: center;
 }
-.tab {
+.active {
   display: flex;
 }
-.active {
+.active-describe {
   background-color: #fff;
   color: #212633;
   font-size: 17px;
 }
-.detail-info .h3 {
-  font-size: 10px;
+.active-specifications {
+  background-color: #fff;
+  color: #212633;
+  font-size: 17px;
+}
+.detail-info h3 {
+  font-size: 15px;
+  color: #525b73;
+}
+.detail-info h2 {
+  margin: 0;
+  font-size: 20px;
+}
+.detail-info p {
+  font-size: 17px;
+  color: #71737e;
 }
 .describe {
+  display: none;
+}
+.specifications {
   display: none;
 }

@@ -31,9 +31,12 @@
           </p>
           <img src="./img/remthongminh.avif" alt="Hình ảnh Rèm thông minh" />
         </div>
-          <div class="learn-more">
-              <b>Tìm hiểu</b>
-              <i class="fa-solid fa-arrow-right"></i>
+          <div class="learn-more"
+          data-eng="Smart Curtain"
+          data-describe="Thiết kế chắc chắn & bền bỉ: Toàn bộ sản phẩm bên ngoài được làm bằng nhôm cao cấp"
+          data-specifications=>
+              <button>Tìm hiểu
+              <i class="fa-solid fa-arrow-right"></i></button>
           </div>
       </div>
       <div class="item">
@@ -46,9 +49,12 @@
           </p>
           <img src="./img/denthongminh.avif" alt="Hình ảnh Đèn thông minh" />
         </div>
-         <div class="learn-more">
-              <b>Tìm hiểu</b>
-              <i class="fa-solid fa-arrow-right"></i>
+         <div class="learn-more"
+          data-eng="Led Spotlight"
+          data-describe="Đèn LED spotlight hiện đại với khả năng điều chỉnh góc chiếu linh hoạt"
+          data-specifications=>
+              <button>Tìm hiểu
+              <i class="fa-solid fa-arrow-right"></i></button>
           </div>
       </div>
       <div class="item">
@@ -64,9 +70,12 @@
             alt="Hình ảnh Công tắc thông minh"
           />
         </div>
-         <div class="learn-more">
-              <b>Tìm hiểu</b>
-              <i class="fa-solid fa-arrow-right"></i>
+        <div class="learn-more"
+          data-eng="Smart Mechanical Switch"
+          data-describe="Công tắc cơ học thông minh 3 nút"
+          data-specifications=>
+              <button>Tìm hiểu
+              <i class="fa-solid fa-arrow-right"></i></button>
           </div>
       </div>
       <div class="item">
@@ -81,30 +90,35 @@
             alt="Hình ảnh Cảm biến thông minh"
           />
         </div>
-         <div class="learn-more">
-              <b>Tìm hiểu</b>
-              <i class="fa-solid fa-arrow-right"></i>
+        <div class="learn-more"
+          data-eng="Motion Sensor"
+          data-describe="Cảm biến chuyển động thông minh, độ nhạy cao"
+          data-specifications=>
+              <button>Tìm hiểu
+              <i class="fa-solid fa-arrow-right"></i></button>
           </div>
       </div>
     </div>
-  </div>
     <div class="product-detail">
             <button class="back-btn"><i class="fa-solid fa-angle-left"></i></button>
             <div class="detail-content">
-              <img src="./img/remthongminh.avif" alt="">
+              <img id="detail-img" src="./img/remthongminh.avif" alt="">
                 <div class="detail-info">
                   <h3>Chi tiết</h3>
-                  <h2>Rèm Thông Minh</h2>
-                  <p>Smart Curtain</p>
-                  <div class="tab">
-                    <button class="active">Chi tiết</button>
-                    <button class="active">Thông số kĩ thuật</button>
+                  <h2 id="detail-name">Rèm Thông Minh</h2>
+                  <p id="detail-eng">Smart Curtain</p>
+                  <div class="active">
+                    <button class="active-describe">Chi tiết</button>
+                    <button class="active-specifications">Thông số kĩ thuật</button>
                   </div>
-                  <p class="describe">
+                  <p class="describe" id="detail-describe">
                     Thiết kế chắc chắn & bền bỉ: Toàn bộ sản phẩm bên ngoài được làm bằng nhôm cao cấp
+                  </p>
+                   <p class="specifications" id="detail-specifications">
                   </p>
                 </div>
             </div>
+            
             <div class="detail-footer">
               <button class="detail-footer-btn">Tư vấn ngay</button>
               <button class="detail-footer-add-btn">Thêm giỏ hàng</button>
