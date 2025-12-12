@@ -6,45 +6,34 @@ const activeSpecificationsBtn = document.querySelector(
   ".active-specifications"
 );
 
-const describeBox = document.querySelector(".describe");
-const specificationsBox = document.querySelector(".specifications");
-
-learnMoreBtns.forEach((btn) => {
+learnMoreBtns.forEach(function (btn) {
   btn.addEventListener("click", function () {
-    const item = this.closest(".item");
+    productDetail.style.display = "block";
 
+    const item = this.closest(".item");
     const name = item.querySelector("h2").innerText;
     const img = item.querySelector("img").src;
-
     const eng = this.dataset.eng || " ";
-    const describe =
-      this.dataset.describe || item.querySelector(".content p").innerText;
+    const describe = this.dataset.describe || " ";
     const specifications = this.dataset.specifications || " ";
 
     document.getElementById("detail-name").innerText = name;
     document.getElementById("detail-eng").innerText = eng;
-    document.getElementById("detail-img").src = img;
-
     document.getElementById("detail-describe").innerText = describe;
     document.getElementById("detail-specifications").innerText = specifications;
-
-    productDetail.style.display = "block";
-
-    describeBox.style.display = "block";
-    specificationsBox.style.display = "none";
+    document.getElementById("detail-img").src = img;
   });
 });
 
-backBtn.addEventListener("click", () => {
+const describe = document.querySelector(".describe");
+const specifications = document.querySelector(".specifications");
+activeDescribeBtn.addEventListener("click", function () {
+  describe.style.display = "block";
+});
+activeSpecificationsBtn.addEventListener("click", function () {
+  specifications.style.display = "block";
+  describe.style.display = "none";
+});
+backBtn.addEventListener("click", function () {
   productDetail.style.display = "none";
-});
-
-activeDescribeBtn.addEventListener("click", () => {
-  describeBox.style.display = "block";
-  specificationsBox.style.display = "none";
-});
-
-activeSpecificationsBtn.addEventListener("click", () => {
-  describeBox.style.display = "none";
-  specificationsBox.style.display = "block";
 });
