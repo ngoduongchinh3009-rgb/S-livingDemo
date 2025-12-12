@@ -25,14 +25,15 @@ learnMoreBtns.forEach(function (btn) {
   });
 });
 
-const describe = document.querySelector(".describe");
-const specifications = document.querySelector(".specifications");
+const describeBox = document.querySelector(".describe");
+const specificationsBox = document.querySelector(".specifications");
 activeDescribeBtn.addEventListener("click", function () {
-  describe.style.display = "block";
+  describeBox.style.display = "block";
+  specificationsBox.style.display = "none";
 });
 activeSpecificationsBtn.addEventListener("click", function () {
-  specifications.style.display = "block";
-  describe.style.display = "none";
+  specificationsBox.style.display = "block";
+  describeBox.style.display = "none";
 });
 backBtn.addEventListener("click", function () {
   productDetail.style.display = "none";
