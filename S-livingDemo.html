@@ -14,8 +14,8 @@
     <header>
       <h1>Mall</h1>
       <div class="icons">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <i class="fa-solid fa-cart-shopping"></i>
+        <button class="icon-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button class="icon-cart"><i class="fa-solid fa-cart-shopping"></i></button>
       </div>
     </header>
 <main>
@@ -217,6 +217,31 @@
         <p class="best-sellers-names-e">Temperature Sensor</p>
       </div>
       </div>
+      <div class="cart-box">
+            <div class="cart-header"><button class="back-btn"><i class="fa-solid fa-angle-left"></i></button>
+               <h3>Giỏ hàng</h3>
+            </div>
+
+            <div class="cart-list">
+              <div class="cart-item">
+                <img src="./img/denthongminh.avif" alt="">
+                <div class="cart-info">
+                  <h4 id="cart-name">Đèn Spotlight</h4>
+                  <p id="cart-eng">Led Spotlight</p>
+                  <div class="cart-qty">
+                    <button class="qty-minus">-</button>
+                    <span id="cart-qty">1</span>
+                    <button class="qty-plus">+</button>
+                  </div>
+                </div>
+                  <button class="cart-remove"><i class="fa-solid fa-trash-can"></i></button>
+                  <div class="cart-footer">
+                    <p>Tổng số lượng <b id="cart-total">1 sản phẩm</b></p>
+                    <button class="cart-submit">Tiếp tục</button>
+                  </div>
+                </div>
+              </div>
+            </div>
       </main>
       <footer>
               <button class="icons-footer"><i class="fa-regular fa-house"></i></button>
