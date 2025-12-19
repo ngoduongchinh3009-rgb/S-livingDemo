@@ -3,7 +3,9 @@ body {
   background-color: #f6f7fb;
   width: 100%;
   height: 100%;
+  margin: 0;
 }
+
 header {
   display: flex;
   align-items: center;
@@ -11,13 +13,15 @@ header {
   top: 0;
   padding: 0 140px;
   height: 50px;
-  justify-content: space-between; /*ở giữa cách đều*/
+  justify-content: space-between;
   background-color: #f6f7fb;
   z-index: 999;
 }
+
 main {
   margin: 0 140px 80px 140px;
 }
+
 footer {
   display: flex;
   gap: 50px;
@@ -30,7 +34,9 @@ footer {
   padding: 10px 0;
   justify-content: center;
   color: #71737e;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05); /* Thêm bóng cho footer nổi lên */
 }
+
 footer.hide {
   display: none;
 }
@@ -40,29 +46,59 @@ h1 {
   margin: 0;
   color: #212633;
 }
+
 h2 {
   font-size: 18px;
   margin: 20px 0 0 20px;
   color: #212633;
 }
+
 h3 {
   font-size: 20px;
   margin: 10px 0;
 }
+
 .icons {
   display: flex;
-  gap: 10px;
-  font-size: 20px;
+  gap: 5px;
   text-align: right;
 }
+
+.icon-cart {
+  position: relative;
+  font-size: 20px;
+  color: #000;
+}
+
+.icon-search {
+  font-size: 20px;
+  color: #000;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: 5px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background-color: #ff4d4f;
+  color: #fff;
+  display: none;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
 .banner {
   width: 1200px;
   display: flex;
   overflow-x: scroll;
   scrollbar-width: none;
 }
+
 .item {
-  flex: 0 0 auto; /* không co giãn*/
+  flex: 0 0 auto;
   margin-right: 20px;
   width: 590px;
   height: 150px;
@@ -70,10 +106,12 @@ h3 {
   border-radius: 30px;
   text-align: left;
 }
+
 .item .content {
-  display: flex; /* thẻ p và img đều nằm ngang nhau*/
+  display: flex;
   margin: 0;
 }
+
 .item .content p {
   flex: 8;
   font-size: 13px;
@@ -82,12 +120,14 @@ h3 {
   height: 100%;
   color: #525b73;
 }
+
 .item .content img {
   flex: 2;
   margin: -30px 10px;
   width: 20%;
   height: 100%;
 }
+
 .learn-more {
   display: flex;
   color: #1a7dd8;
@@ -95,19 +135,23 @@ h3 {
   margin-left: 20px;
   font-size: 13px;
 }
+
 .learn-more button {
   background-color: #fff;
   color: #1a7dd8;
   display: flex;
   gap: 5px;
 }
+
 .best-sellers {
   display: flex;
   width: 100%;
 }
+
 .best-sellers-list-add {
   position: relative;
 }
+
 .best-sellers img {
   background-color: #fff;
   margin: 10px 20px 0 0;
@@ -115,41 +159,48 @@ h3 {
   height: 170px;
   border-radius: 20px;
 }
+
 .add-cart {
   position: absolute;
   bottom: 10px;
   right: 30px;
   background-color: #1a7dd8;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .add-cart .qty-minus,
 .add-cart .qty-value {
   display: none;
 }
+
 .add-cart.has-qty .qty-minus,
 .add-cart.has-qty .qty-value {
   display: flex;
   align-items: center;
   color: #000;
 }
+
 .add-cart.has-qty .qty-value {
   font-size: 13px;
 }
+
 .add-cart.has-qty .qty-minus {
   color: #ccc;
   font-size: 20px;
 }
+
 .add-cart.has-qty .qty-plus {
   color: #ccc;
 }
+
 .add-cart.has-qty {
-  width: 70px;
+  width: 80px;
   padding: 0 7px;
   border-radius: 15px;
   justify-content: space-between;
@@ -157,41 +208,46 @@ h3 {
   background-color: #fff;
   border: 1px solid #1a7dd8;
 }
+
 .best-sellers-names {
   font-size: 16px;
   margin: 0 0 0 10px;
 }
+
 .best-sellers-names-e {
   font-size: 13px;
   margin: 0 0 25px 10px;
 }
+
 .products-list-header {
   display: flex;
   margin: 10px;
-  gap: 30px; /* khoảng cách giữa các div*/
+  gap: 30px;
   border-radius: 50px;
 }
+
 button {
   display: flex;
   background-color: #f6f7fb;
   border: none;
   font-size: 15px;
   color: #83a1a7;
-}
-button:hover {
   cursor: pointer;
 }
+
 button.icons-footer {
   display: flex;
   background-color: #fff;
   border: none;
-  font-size: 20px;
+  font-size: 23px;
   color: #83a1a7;
 }
+
 .products {
   display: flex;
   flex-wrap: wrap;
 }
+
 .products-list img {
   width: 390px;
   height: 420px;
@@ -199,6 +255,7 @@ button.icons-footer {
   border-radius: 20px;
   margin: 20px 20px 0 0;
 }
+
 .product-detail {
   display: none;
   position: fixed;
@@ -209,23 +266,27 @@ button.icons-footer {
   left: 0;
   z-index: 999;
 }
+
 .detail-content {
   display: flex;
   gap: 50px;
   margin: 0 140px;
 }
+
 .back-btn {
   margin: 20px 120px;
   background-color: #fff;
   color: black;
   font-size: 20px;
 }
+
 .detail-content img {
   width: 550px;
   height: 550px;
   background-color: #f6f7fb;
   border-radius: 20px;
 }
+
 .detail-footer {
   display: flex;
   margin: 10px 120px;
@@ -234,6 +295,7 @@ button.icons-footer {
   height: 100px;
   background-color: #fff;
 }
+
 .detail-footer-btn {
   width: 650px;
   height: 60px;
@@ -245,6 +307,7 @@ button.icons-footer {
   align-items: center;
   justify-content: center;
 }
+
 .detail-footer-add-btn {
   width: 650px;
   height: 60px;
@@ -256,37 +319,46 @@ button.icons-footer {
   align-items: center;
   justify-content: center;
 }
+
 .active {
   display: flex;
 }
+
 .active-describe {
   background-color: #fff;
   color: #212633;
   font-size: 17px;
 }
+
 .active-specifications {
   background-color: #fff;
   color: #212633;
   font-size: 17px;
 }
+
 .detail-info h3 {
   font-size: 15px;
   color: #525b73;
 }
+
 .detail-info h2 {
   margin: 0;
   font-size: 20px;
 }
+
 .detail-info p {
   font-size: 17px;
   color: #71737e;
 }
+
 .describe {
   display: none;
 }
+
 .specifications {
   display: none;
 }
+
 .cart-box {
   display: none;
   position: fixed;
@@ -295,61 +367,142 @@ button.icons-footer {
   width: 100%;
   height: 100%;
   left: 0;
-  display: flex;
   flex-direction: column;
   z-index: 999;
 }
+
 .cart-header {
   display: flex;
   align-items: center;
   padding: 15px;
 }
+
 .cart-header h3 {
-  flex: 1;
+  flex: 1; /* Tự căn giữa tiêu đề */
   text-align: center;
-  font-size: 15px;
+  font-size: 18px;
+  margin: 0;
 }
+
 .cart-item {
   display: flex;
   align-items: center;
   padding: 0 140px;
   gap: 15px;
+  margin-bottom: 20px;
 }
+
 .cart-item img {
   width: 90px;
   height: 90px;
   background-color: #f6f7fb;
   border-radius: 10px;
 }
+
+.cart-info {
+  font-size: 15px;
+  flex: 1; /* Đẩy nội dung chiếm chỗ trống */
+}
+
 .cart-info p {
   color: #525b73;
-  font-size: 14px;
+  font-size: 13px;
 }
+
+.empty-cart {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-icon {
+  font-size: 60px;
+  color: #71737e;
+  padding: 20px;
+}
+
+.continue-btn {
+  background-color: #1a7dd8;
+  color: #fff;
+  border-radius: 20px;
+  width: 200px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+}
+
+.cart-list {
+  overflow-y: scroll;
+  scrollbar-width: none;
+  padding-bottom: 20px;
+}
+
 .cart-qty {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 8px;
-  border: 1px solid black;
+  width: 100px;
+  height: 30px;
+  border: 1px solid #000;
   border-radius: 20px;
-}
-.cart-qty button {
-  width: 28px;
-  height: 28px;
-  font-size: 25px;
   background-color: #fff;
-  border-radius: 50%;
+  padding: 0 8px;
 }
+
+.cart-qty .cart-qty-btn {
+  border: none;
+  height: 15px;
+  width: 40px;
+  font-size: 20px;
+  color: #666;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  background-color: #fff;
+}
+
+.cart-qty span.cart-qty {
+  flex: 1;
+  border: none;
+  padding: 0;
+  width: auto;
+  height: auto;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+}
+
 .cart-remove {
   background: none;
-  margin-left: auto;
+  margin-left: 20px;
   font-size: 20px;
+  color: #999;
+  cursor: pointer;
 }
+
 .cart-footer {
   margin-top: auto;
-  padding: 15px;
+  padding: 15px 140px;
   border-top: 1px solid #ddd;
 }
+
+.cart-footer p {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.cart-footer b {
+  color: #1a7dd8;
+  font-size: 18px;
+}
+
 .cart-submit {
   width: 100%;
   margin-top: 10px;
@@ -359,4 +512,5 @@ button.icons-footer {
   border: none;
   border-radius: 12px;
   font-size: 16px;
+  justify-content: center;
 }

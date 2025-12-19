@@ -19,6 +19,7 @@
         </button>
         <button class="icon-cart">
           <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count"></span>
         </button>
       </div>
     </header>
@@ -286,12 +287,35 @@
         </div>
 
         <div class="cart-list"></div>
-
+        <div class="empty-cart">
+          <div class="empty-icon">
+            <i class="fa-solid fa-bag-shopping"></i>
+          </div>
+          <p>Giỏ hàng của bạn đang trống</p>
+          <button class="continue-btn">Tiếp tục mua sắm</button>
+        </div>
         <div class="cart-footer">
           <p>Tổng số lượng <b>0 sản phẩm</b></p>
           <button class="cart-submit">Tiếp tục</button>
         </div>
       </div>
+      <template id="cart-item-template">
+        <div class="cart-item">
+          <img src="" alt="" class="cart-img" />
+          <div class="cart-info">
+            <h4 class="cart-name"></h4>
+            <p class="cart-eng"></p>
+            <div class="cart-qty">
+              <button class="cart-qty-btn minus">-</button>
+              <span class="cart-qty"></span>
+              <button class="cart-qty-btn plus">+</button>
+            </div>
+          </div>
+          <button class="cart-remove">
+            <i class="fa-solid fa-trash-can"></i>
+          </button>
+        </div>
+      </template>
     </main>
     <footer>
       <button class="icons-footer"><i class="fa-regular fa-house"></i></button>

@@ -6,27 +6,31 @@ const activeSpecificationsBtn = document.querySelector(
   ".active-specifications"
 );
 
+const detailName = document.getElementById("detail-name");
+const detailEng = document.getElementById("detail-eng");
+const detailDescribe = document.getElementById("detail-describe");
+const detailSpecification = document.getElementById("detail-specifications");
+const detailImg = document.getElementById("detail-img");
+const describeBox = document.querySelector(".describe");
+const specificationsBox = document.querySelector(".specifications");
+
 learnMoreBtns.forEach(function (btn) {
   btn.addEventListener("click", function () {
     productDetail.style.display = "block";
-
     const item = this.closest(".item");
     const name = item.querySelector("h2").innerText;
     const img = item.querySelector("img").src;
-    const eng = this.dataset.eng || " ";
-    const describe = this.dataset.describe || " ";
-    const specifications = this.dataset.specifications || " ";
+    const eng = this.dataset.eng || "";
+    const describe = this.dataset.describe || "";
+    const specifications = this.dataset.specifications || "";
 
-    document.getElementById("detail-name").innerText = name;
-    document.getElementById("detail-eng").innerText = eng;
-    document.getElementById("detail-describe").innerText = describe;
-    document.getElementById("detail-specifications").innerText = specifications;
-    document.getElementById("detail-img").src = img;
+    detailName.innerText = name;
+    detailEng.innerText = eng;
+    detailDescribe.innerText = describe;
+    detailSpecification.innerText = specifications;
+    detailImg.src = img;
   });
 });
-
-const describeBox = document.querySelector(".describe");
-const specificationsBox = document.querySelector(".specifications");
 activeDescribeBtn.addEventListener("click", function () {
   describeBox.style.display = "block";
   specificationsBox.style.display = "none";
@@ -48,43 +52,55 @@ const cartTotalElement = document.querySelector(".cart-footer b");
 let cart = [];
 
 const addCartBtns = document.querySelectorAll(".add-cart");
+
 addCartBtns.forEach(function (btn) {
   const minusBtn = btn.querySelector(".qty-minus");
   const valueSpan = btn.querySelector(".qty-value");
   const plusBtn = btn.querySelector(".qty-plus");
+
   btn.addEventListener("click", function (e) {
     if (this.classList.contains("has-qty")) return;
     e.preventDefault();
     this.classList.add("has-qty");
+
     const productData = getProductData(this);
     addToCart(productData.name, productData.eng, productData.img);
   });
+
   plusBtn.addEventListener("click", function (e) {
     e.stopPropagation();
     e.preventDefault();
+
     const productData = getProductData(btn);
     const item = cart.find((i) => i.name === productData.name);
+
     if (item) {
       item.quantity++;
       valueSpan.innerText = item.quantity;
       renderCart();
     }
   });
+
   minusBtn.addEventListener("click", function (e) {
     e.stopPropagation();
     e.preventDefault();
+
     const productData = getProductData(btn);
     const item = cart.find((i) => i.name === productData.name);
+
     if (item) {
-      item.quantity--;
-      if (item.quantity <= 0) {
+      if (item.quantity > 1) {
+        item.quantity--;
+        valueSpan.innerText = item.quantity;
+        renderCart();
+      } else {
         removeFromCart(productData.name);
         btn.classList.remove("has-qty");
         valueSpan.innerText = "1";
-      } else {
-        valueSpan.innerText = item.quantity;
-        renderCart();
       }
+    } else {
+      btn.classList.remove("has-qty");
+      valueSpan.innerText = "1";
     }
   });
 });
@@ -97,45 +113,76 @@ function getProductData(btnElement) {
   };
 }
 function addToCart(name, eng, img) {
-  const existingItem = cart.find((item) => item.name === name);
+  const existingItem = cart.find(function (item) {
+    return item.name === name;
+  });
   if (existingItem) {
     existingItem.quantity++;
   } else {
-    cart.push({ name, eng, img, quantity: 1 });
+    cart.push({ name: name, eng: eng, img: img, quantity: 1 });
   }
   renderCart();
 }
 function removeFromCart(name) {
-  cart = cart.filter((item) => item.name !== name);
+  cart = cart.filter(function (item) {
+    return item.name !== name;
+  });
   renderCart();
 }
 function renderCart() {
-  cartListContainer.innerHTML = "";
-  let totalQty = 0;
+  const cartCountElement = document.querySelector(".cart-count");
+  const cartFooter = document.querySelector(".cart-footer");
+  const emptyCart = document.querySelector(".empty-cart");
+  const template = document.getElementById("cart-item-template");
 
+  cartListContainer.innerHTML = "";
+
+  let totalQty = 0;
   cart.forEach(function (item) {
     totalQty += item.quantity;
-    const html = `
-    <div class="cart-item">
-      <img src="${item.img}" alt="${item.name}"/>
-      <div class="cart-info">
-        <h4>${item.name}</h4>
-        <p>${item.eng}</p>
-        <div class="cart-qty">
-          <button class="cart-qty-btn minus" data-name="${item.name}">-</button>
-          <span>${item.quantity}</span>
-          <button class="cart-qty-btn plus" data-name="${item.name}">+</button>
-        </div>
-      </div>
-      <button class="cart-remove" data-name="${item.name}">
-        <i class="fa-solid fa-trash-can"></i>
-      </button>
-    </div>`;
-    cartListContainer.insertAdjacentHTML("beforeend", html);
   });
-  if (cartTotalElement) {
-    cartTotalElement.innerText = `${totalQty} sản phẩm`;
+
+  if (cartCountElement) {
+    if (totalQty > 0) {
+      cartCountElement.innerText = totalQty;
+      cartCountElement.style.display = "flex";
+    } else {
+      cartCountElement.innerText = 0;
+      cartCountElement.style.display = "none";
+    }
   }
+
+  if (cart.length === 0) {
+    emptyCart.style.display = "flex";
+    cartListContainer.style.display = "none";
+    if (cartFooter) cartFooter.style.display = "none";
+    return;
+  }
+
+  emptyCart.style.display = "none";
+  cartListContainer.style.display = "block";
+  if (cartFooter) cartFooter.style.display = "block";
+
+  cart.forEach(function (item) {
+    const clone = template.content.cloneNode(true);
+
+    clone.querySelector(".cart-img").src = item.img;
+    clone.querySelector(".cart-name").innerText = item.name;
+    clone.querySelector(".cart-eng").innerText = item.eng;
+    clone.querySelector("span.cart-qty").innerText = item.quantity;
+
+    clone.querySelector(".minus").setAttribute("data-name", item.name);
+    clone.querySelector(".plus").setAttribute("data-name", item.name);
+    clone.querySelector(".cart-remove").setAttribute("data-name", item.name);
+
+    cartListContainer.appendChild(clone);
+  });
+
+  if (cartCountElement) {
+    cartTotalElement.innerText = `${totalQty} sản phẩm`;
+    cartCountElement.style.display = "flex";
+  }
+
   addCartPopupEvents();
 }
 function addCartPopupEvents() {
@@ -150,8 +197,10 @@ function addCartPopupEvents() {
     btn.addEventListener("click", function () {
       const name = this.getAttribute("data-name");
       const isPlus = this.classList.contains("plus");
-      const item = cart.find((i) => i.name === name);
 
+      const item = cart.find(function (i) {
+        return i.name === name;
+      });
       if (item) {
         if (isPlus) {
           item.quantity++;
@@ -205,5 +254,12 @@ function closeCart() {
   cartBox.style.display = "none";
   document.querySelector("footer").classList.remove("hide");
 }
+
 cartIcon.addEventListener("click", openCart);
 cartBackBtn.addEventListener("click", closeCart);
+
+const continueBtn = document.querySelector(".continue-btn");
+if (continueBtn) continueBtn.addEventListener("click", closeCart);
+
+const submitBtn = document.querySelector(".cart-submit");
+if (submitBtn) submitBtn.addEventListener("click", closeCart);
