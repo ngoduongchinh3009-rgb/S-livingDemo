@@ -60,7 +60,6 @@ addCartBtns.forEach(function (btn) {
 
   btn.addEventListener("click", function (e) {
     if (this.classList.contains("has-qty")) return;
-    e.preventDefault();
     this.classList.add("has-qty");
 
     const productData = getProductData(this);
@@ -68,9 +67,6 @@ addCartBtns.forEach(function (btn) {
   });
 
   plusBtn.addEventListener("click", function (e) {
-    e.stopPropagation();
-    e.preventDefault();
-
     const productData = getProductData(btn);
     const item = cart.find((i) => i.name === productData.name);
 
